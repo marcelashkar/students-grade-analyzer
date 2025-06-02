@@ -13,7 +13,7 @@ print("your age is",Age)
 print("your gpa is",GPA)
 print("your field is:",Filed)
 
-print=("Graduated??")
+
 if graduated=='yes':
          print("you are graduated")
 else:
