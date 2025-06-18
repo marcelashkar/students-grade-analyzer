@@ -14,7 +14,11 @@ print("your gpa is",GPA)
 print("your field is:",Filed)
 
 
+<<<<<<< HEAD
 if graduated =='yes':
+=======
+if graduated=='yes':
+>>>>>>> 8336d40d3526b3247fd21f8b8051c835f582380c
          print("you are graduated")
 else:
         print("no")
@@ -24,4 +28,8 @@ if Age < 25 and GPA<=3.5 and graduated=='yes':
 elif Age < 30 and GPA >= 2.5:
         print("you are eligible for internship!!")
 else :
+<<<<<<< HEAD
        print("apply again later")
+=======
+       print("apply again later")
+>>>>>>> 8336d40d3526b3247fd21f8b8051c835f582380c
