@@ -1,56 +1,44 @@
-def get_student (n,students=None):
-    if students is None:
-        students=[]              #vide
+def display_students_summary(students: list):
+    if len(students)==0:
+        return
+    print("summary")
+    for student in students:
+        print(student[0],":",student[1])
+ 
+ 
+def get_avg_grade(students:list):
+    if len(students)==0:
+        return 0
+    sum=0
+    for student in students:
+        
+        sum+=student[1]
+
+    return sum/len(students)
+
+def get_heighest_grade(students:list):    #first way
+
+    highest_grade_students=[]
+
+    highest_grade =students[0][1]
+
+    for student in students:
+        if student[1] == highest_grade:
+            highest_grade_students.append(student)
+        elif student[1] > highest_grade:
+             highest_grade = student[1]
+             highest_grade_students = []
+             highest_grade_students.append(student)
 
 
-    if n==0:
-        return students   
-    
+    return highest_grade_students  
 
-    name=input("enter student name:")
-    grade= float(input("enter grade for ",name ,"out of 100"))
+students=[("joe",23),("jhon",59),("ali",65),("amir",10)]
 
+print("summary:")
+display_students_summary(students)
 
-    students.append((name,grade))
-
-    return
-
-    get_students_data(n-1,students)
-
-def display_student_summary(students):                    
-    print("student grades :")
-    for name,grade in students:
-        print("the name is ",name,"and the grade is",grade)
-
-
-def get_avg_grade(students):                     #average of grades
-    total=0
-    for grade in students:
-        total +=grade
-    average= total/len(students)
-    return average
-
-
-def get_heighest_grade(students):
-    return max(students,lambda x:x[1])
-
-
-def count_passed(students):                                     #number of students passed
-    return sum(1 for name,garde in students if grade>=60)
-
-
-
-def number():
-    numb=int(input("enter number of students:")) #entter number of students
-
-    students=get_student(numb)                   #getting number of stuf=dents
-
-    display_student_summary(students)            #Display 
-
-    print("avg",get_avg_grade(students))           
-
-    top_name,top_grade=get_heighest_grade(students)
-
-    print("top:",top_name,top_grade)
-
-    print("passed",count_passed(students))
+print("average grade:")
+print(get_avg_grade(students))
+print("highest grade students:")
+print(get_heighest_grade(students))
