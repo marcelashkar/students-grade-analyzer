@@ -58,16 +58,11 @@ def main():
                duration = int(input("Enter duration: "))
                priority = int(input("Enter priority: "))
                task= creat_task(title,duration,priority)
-               insert(queue,task)
-    for task in queue:
-        print(task)
-
+ 
+ 
 
     print("complete next task",complete_next_task(queue))
-
-    for task in queue:
-        print(task)
-
+    
     print("sort task",sort_tasks(queue))
     
    
